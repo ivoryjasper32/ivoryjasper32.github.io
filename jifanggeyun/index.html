@@ -1,0 +1,1206 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>集芳阁云搜官网-资源检索与收录指南</title>
+<meta name="description" content="集芳阁云搜官网提供跨站资源索引、收录规则与检索技巧说明，涵盖古风图库、同人文本、曲谱名录等垂类目录，附收录时间线、可信度分层与常见问题解答，帮助使用者判断条目来源与更新时间。">
+<meta name="keywords" content="集芳阁云搜官网">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f4f43'/%3E%3Ccircle cx='14' cy='14' r='6' fill='none' stroke='%23e8d9b5' stroke-width='2.4'/%3E%3Cline x1='18.5' y1='18.5' x2='25' y2='25' stroke='%23e8d9b5' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1d2521;
+  --ink-soft:#4a554f;
+  --ink-mute:#6f7a74;
+  --paper:#f6f3ec;
+  --card:#fffdf8;
+  --line:#ddd6c7;
+  --line-soft:#ebe5d8;
+  --main:#2f4f43;
+  --main-deep:#223a31;
+  --accent:#a8552c;
+  --accent-soft:#f0e2d3;
+  --gold:#c8a86b;
+  --shadow:0 1px 2px rgba(34,58,49,.05),0 6px 18px rgba(34,58,49,.06);
+  --r-sm:6px;
+  --r-md:10px;
+  --r-lg:16px;
+  --sp-1:6px;--sp-2:12px;--sp-3:18px;--sp-4:26px;--sp-5:38px;--sp-6:56px;
+  --ann-h:38px;
+  --head-h:64px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --serif:"Songti SC","Source Han Serif SC","Noto Serif SC",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--ann-h) + var(--head-h) + 12px)}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);background:var(--paper);
+  font-size:15.5px;line-height:1.78;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--main);text-decoration:none}
+a:hover{color:var(--accent)}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 var(--sp-2)}
+ul,ol{margin:0 0 var(--sp-2);padding-left:1.2em}
+li{margin-bottom:4px}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px;border-radius:3px}
+
+/* ===== 公告条 ===== */
+.annbar{
+  position:sticky;top:0;z-index:60;
+  background:linear-gradient(90deg,var(--main-deep),var(--main) 60%,#3a6354);
+  color:#f2ecdd;font-size:13px;height:var(--ann-h);
+  display:flex;align-items:center;
+}
+.annbar .wrap{display:flex;align-items:center;gap:10px;width:100%;overflow:hidden}
+.annbar .tag{
+  flex:0 0 auto;background:var(--gold);color:#2a2113;
+  font-weight:700;font-size:11.5px;letter-spacing:.5px;
+  padding:2px 7px;border-radius:3px;
+}
+.annbar p{margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px}
+.annbar a{color:#f7e9c9;border-bottom:1px dotted #f7e9c9}
+.annbar a:hover{color:#fff}
+
+/* ===== 页头 ===== */
+.head{
+  position:sticky;top:var(--ann-h);z-index:55;
+  background:rgba(246,243,236,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  height:var(--head-h);
+}
+.head .wrap{height:100%;display:flex;align-items:center;gap:var(--sp-3)}
+.brand{display:flex;align-items:center;gap:9px;flex:0 0 auto}
+.brand svg{width:32px;height:32px;flex:0 0 auto}
+.brand b{font-family:var(--serif);font-size:18px;letter-spacing:.5px;color:var(--main-deep)}
+.nav{display:flex;gap:2px;flex:1 1 auto;overflow:visible;flex-wrap:nowrap}
+.nav a{
+  font-size:14px;color:var(--ink-soft);padding:7px 9px;border-radius:var(--r-sm);
+  white-space:nowrap;
+}
+.nav a:hover,.nav a.on{background:#e9e4d6;color:var(--main-deep)}
+.head-tools{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.search{position:relative;display:flex;align-items:center}
+.search input{
+  width:168px;font:inherit;font-size:13.5px;padding:7px 30px 7px 10px;
+  border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);
+  transition:width .18s,border-color .18s;
+}
+.search input:focus{width:200px;border-color:var(--main);outline:none}
+.search button{
+  position:absolute;right:3px;top:50%;transform:translateY(-50%);
+  border:0;background:none;padding:4px 6px;cursor:pointer;color:var(--ink-mute);font-size:14px;line-height:1;
+}
+.search button:hover{color:var(--accent)}
+.search-result{
+  position:absolute;top:calc(100% + 8px);right:0;width:290px;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);
+  box-shadow:var(--shadow);padding:8px;display:none;font-size:13px;max-height:330px;overflow:auto;
+}
+.search-result.show{display:block}
+.search-result a{display:block;padding:6px 8px;border-radius:5px;color:var(--ink);line-height:1.5}
+.search-result a:hover{background:#f0ebdd}
+.search-result .empty{color:var(--ink-mute);padding:8px;line-height:1.6}
+.menu-btn{
+  display:none;border:1px solid var(--line);background:var(--card);
+  border-radius:var(--r-sm);padding:6px 10px;font:inherit;font-size:13.5px;cursor:pointer;color:var(--main-deep);
+}
+.menu-btn:hover{border-color:var(--main)}
+
+.wrap{width:min(1180px,100% - 36px);margin-inline:auto}
+
+/* ===== 首屏 ===== */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1100px 300px at 12% -12%,#e9e2d0 0%,transparent 62%),
+    linear-gradient(180deg,#f6f3ec 0%,#efeade 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero .wrap{position:relative;z-index:2;padding:var(--sp-6) 0 var(--sp-5);display:grid;grid-template-columns:1.15fr .85fr;gap:var(--sp-5);align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--main);background:#e5eedd;border:1px solid #cfdcc4;border-radius:999px;padding:3px 11px 3px 8px;margin-bottom:var(--sp-3)}
+.hero-eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--main);display:inline-block}
+.hero h1{font-family:var(--serif);font-size:clamp(30px,4.4vw,46px);letter-spacing:1px;color:var(--main-deep);margin-bottom:var(--sp-2)}
+.hero .lead{font-size:16px;color:var(--ink-soft);max-width:36em;margin-bottom:var(--sp-3)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:var(--sp-4)}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;font:inherit;font-size:14.5px;font-weight:600;
+  padding:9px 18px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .16s,background .16s;
+}
+.btn-primary{background:var(--main);color:#f7f2e5}
+.btn-primary:hover{background:var(--main-deep);color:#fff;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--main-deep);border-color:#c5cdc0}
+.btn-ghost:hover{background:#e7ead9;transform:translateY(-2px)}
+.hero-stats{display:flex;gap:var(--sp-4);flex-wrap:wrap;list-style:none;padding:0;margin:0}
+.hero-stats li{min-width:96px}
+.hero-stats b{display:block;font-family:var(--serif);font-size:23px;color:var(--main-deep);line-height:1.2}
+.hero-stats span{font-size:12.5px;color:var(--ink-mute)}
+.hero-art{position:relative;height:318px}
+.hero-art svg{width:100%;height:100%;display:block}
+.hero-note{
+  position:absolute;right:0;bottom:0;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r-md);box-shadow:var(--shadow);padding:9px 13px;font-size:12.5px;color:var(--ink-soft);
+  max-width:230px;line-height:1.6;
+}
+.hero-note b{color:var(--accent);font-weight:700}
+
+/* ===== 布局 ===== */
+.layout{display:grid;grid-template-columns:1fr 300px;gap:var(--sp-5);padding:var(--sp-5) 0 var(--sp-6);align-items:start}
+main{min-width:0}
+section{scroll-margin-top:calc(var(--ann-h) + var(--head-h) + 12px)}
+.sec{margin-bottom:var(--sp-6)}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--sp-3);margin-bottom:var(--sp-3);border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-head h2{font-family:var(--serif);font-size:21px;color:var(--main-deep);letter-spacing:.4px;display:flex;align-items:center;gap:9px}
+.sec-head h2::before{content:"";width:4px;height:17px;background:var(--accent);border-radius:2px;display:inline-block}
+.sec-head .more{font-size:13px;color:var(--ink-mute);flex:0 0 auto}
+.sec-head .more:hover{color:var(--accent)}
+.sec-intro{font-size:14px;color:var(--ink-soft);margin:-4px 0 var(--sp-3)}
+
+/* ===== 领域概览 ===== */
+.overview{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-2);list-style:none;padding:0;margin:0}
+.overview li{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:13px 14px;
+  display:flex;gap:11px;align-items:flex-start;
+}
+.overview .num{font-family:var(--serif);font-size:15px;color:var(--gold);font-weight:700;line-height:1.5;flex:0 0 auto}
+.overview strong{display:block;font-size:14.5px;color:var(--main-deep);margin-bottom:2px}
+.overview span{font-size:13px;color:var(--ink-soft);line-height:1.65}
+
+/* ===== 精选卡片 ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3)}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card .thumb{position:relative;aspect-ratio:16/10;background:#e6e1d3}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.card .thumb .badge{
+  position:absolute;left:9px;top:9px;background:rgba(34,58,49,.86);color:#f3ecd9;
+  font-size:11.5px;padding:2px 8px;border-radius:999px;letter-spacing:.3px;
+}
+.card-body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card-body h3{font-size:15.5px;line-height:1.45;color:var(--main-deep)}
+.card-body p{font-size:13px;color:var(--ink-soft);line-height:1.68;margin:0}
+.card-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:4px;font-size:12px;color:var(--ink-mute)}
+.card-meta span{background:#f1ecde;border-radius:4px;padding:1px 7px}
+.card-meta .hot{background:var(--accent-soft);color:#8a3f1c}
+
+/* ===== 最新更新 紧凑列表 ===== */
+.updates{list-style:none;padding:0;margin:0;border:1px solid var(--line);border-radius:var(--r-md);background:var(--card);overflow:hidden}
+.updates li{display:grid;grid-template-columns:78px 1fr auto;gap:var(--sp-2);padding:11px 15px;border-bottom:1px solid var(--line-soft);align-items:baseline}
+.updates li:last-child{border-bottom:0}
+.updates time{font-size:12.5px;color:var(--ink-mute);font-variant-numeric:tabular-nums}
+.updates a{font-size:14.5px;color:var(--ink);font-weight:600}
+.updates a:hover{color:var(--accent)}
+.updates .desc{font-size:13px;color:var(--ink-soft);display:block;font-weight:400;margin-top:2px}
+.updates .src{font-size:12px;color:var(--ink-mute);white-space:nowrap}
+
+/* ===== 分类入口 标签索引 ===== */
+.chips{display:flex;flex-wrap:wrap;gap:9px;list-style:none;padding:0;margin:0}
+.chips a{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--card);border:1px solid var(--line);border-radius:999px;
+  padding:6px 13px;font-size:13.5px;color:var(--ink-soft);transition:border-color .15s,color .15s,background .15s;
+}
+.chips a:hover{border-color:var(--main);color:var(--main-deep);background:#eef1e6}
+.chips em{font-style:normal;font-size:11.5px;color:var(--ink-mute);background:#f1ecde;border-radius:999px;padding:0 6px}
+
+/* ===== 深度解析 ===== */
+.deep{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:var(--sp-4) var(--sp-4) var(--sp-3);box-shadow:var(--shadow)}
+.deep .kicker{font-size:12.5px;letter-spacing:2px;color:var(--accent);margin-bottom:8px}
+.deep h2{font-family:var(--serif);font-size:23px;color:var(--main-deep);margin-bottom:var(--sp-2)}
+.deep .stand{margin-bottom:var(--sp-3)}
+.deep .stand p{font-size:15px;color:var(--ink-soft)}
+.deep h3{font-size:16.5px;color:var(--main-deep);margin:var(--sp-4) 0 var(--sp-2);padding-left:11px;border-left:3px solid var(--gold)}
+.deep h3:first-of-type{margin-top:var(--sp-2)}
+.deep p{font-size:14.5px;color:var(--ink-soft)}
+.claim{
+  border:1px solid var(--line);border-left:4px solid var(--main);background:#f3f5ea;
+  border-radius:0 var(--r-md) var(--r-md) 0;padding:12px 15px;margin:var(--sp-2) 0 var(--sp-3);
+  font-size:14.5px;color:var(--ink);
+}
+.claim b{color:var(--main-deep)}
+.check-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:var(--sp-2) 0 var(--sp-3);background:var(--card)}
+.check-table caption{caption-side:top;text-align:left;font-size:13px;color:var(--ink-mute);padding-bottom:6px}
+.check-table th,.check-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.check-table th{background:#eef1e6;color:var(--main-deep);font-weight:600;white-space:nowrap}
+.check-table td{color:var(--ink-soft)}
+.figure{margin:var(--sp-3) 0;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:#efeade}
+.figure img{width:100%;height:auto;object-fit:cover}
+.figure figcaption{font-size:12.5px;color:var(--ink-mute);padding:8px 12px;background:var(--card);border-top:1px solid var(--line)}
+
+/* ===== 体验指南 编号步骤 ===== */
+.steps{list-style:none;padding:0;margin:0;counter-reset:st;display:grid;gap:var(--sp-2)}
+.steps li{
+  counter-increment:st;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:13px 16px 13px 52px;position:relative;
+}
+.steps li::before{
+  content:counter(st,decimal-leading-zero);position:absolute;left:14px;top:11px;
+  font-family:var(--serif);font-size:16px;color:var(--gold);font-weight:700;
+}
+.steps strong{display:block;font-size:14.8px;color:var(--main-deep);margin-bottom:2px}
+.steps span{font-size:13.5px;color:var(--ink-soft);line-height:1.7}
+
+/* ===== FAQ ===== */
+.faq{border:1px solid var(--line);border-radius:var(--r-md);background:var(--card);overflow:hidden}
+.faq details{border-bottom:1px solid var(--line-soft)}
+.faq details:last-child{border-bottom:0}
+.faq summary{
+  cursor:pointer;padding:12px 44px 12px 15px;font-size:14.8px;font-weight:600;color:var(--main-deep);
+  position:relative;list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:15px;top:50%;transform:translateY(-50%);
+  font-size:18px;color:var(--gold);font-weight:400;line-height:1;
+}
+.faq details[open] summary::after{content:"–"}
+.faq summary:hover{background:#f4f1e6}
+.faq .a{padding:0 15px 14px;font-size:13.8px;color:var(--ink-soft);line-height:1.78}
+.faq .a p{margin:0}
+
+/* ===== 评论 ===== */
+.voices{display:grid;gap:var(--sp-2)}
+.voice{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 15px;
+  display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;
+}
+.avatar{
+  width:38px;height:38px;border-radius:50%;background:#e5edd9;color:var(--main-deep);
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;font-weight:700;
+}
+.voice-head{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;margin-bottom:3px}
+.voice-head b{font-size:13.8px;color:var(--main-deep)}
+.voice-head time{font-size:12px;color:var(--ink-mute)}
+.voice-head .to{font-size:11.5px;color:var(--accent);background:var(--accent-soft);padding:0 6px;border-radius:3px}
+.voice p{font-size:13.8px;color:var(--ink-soft);margin:0;line-height:1.75}
+
+/* ===== 相关资讯 ===== */
+.news{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2);list-style:none;padding:0;margin:0}
+.news li{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px}
+.news time{font-size:12px;color:var(--ink-mute);display:block;margin-bottom:3px}
+.news a{font-size:14.3px;font-weight:600;color:var(--ink);display:block;line-height:1.5}
+.news a:hover{color:var(--accent)}
+.news p{font-size:13px;color:var(--ink-soft);margin:5px 0 0;line-height:1.68}
+
+/* ===== 相关推荐 ===== */
+.tagcloud{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.tagcloud a{
+  font-size:13px;padding:5px 11px;border-radius:var(--r-sm);
+  background:#eef1e6;color:var(--main-deep);border:1px solid #d6ddcb;
+}
+.tagcloud a:nth-child(3n+2){background:var(--accent-soft);color:#8a3f1c;border-color:#e3cdb6}
+.tagcloud a:nth-child(3n){background:#f0ebdd;color:var(--ink-soft);border-color:var(--line)}
+.tagcloud a:hover{border-color:var(--main);transform:translateY(-1px)}
+.tagcloud a{transition:transform .14s,border-color .14s}
+
+/* ===== 可信度分层 ===== */
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-2)}
+.trust .tier{
+  border:1px solid var(--line);border-radius:var(--r-md);padding:14px;background:var(--card);
+}
+.trust .tier header{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.trust .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+.trust .t1 .dot{background:#4c7a5c}.trust .t2 .dot{background:#c8a86b}.trust .t3 .dot{background:#a8552c}
+.trust h3{font-size:14.6px;color:var(--main-deep)}
+.trust ul{padding-left:1.05em;margin:0;font-size:13.3px;color:var(--ink-soft);line-height:1.72}
+.trust .base{margin-top:8px;font-size:12.3px;color:var(--ink-mute);line-height:1.6}
+
+/* ===== 时间线 ===== */
+.timeline{list-style:none;padding:0;margin:0;position:relative}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),#dcd5c4)}
+.timeline li{position:relative;padding:0 0 var(--sp-3) 27px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:2px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--card);border:2.5px solid var(--gold)}
+.timeline time{font-size:12.5px;color:var(--accent);font-weight:600;letter-spacing:.3px}
+.timeline b{display:block;font-size:14.4px;color:var(--main-deep);margin:1px 0 2px}
+.timeline span{font-size:13.4px;color:var(--ink-soft);line-height:1.7}
+
+/* ===== 侧栏 ===== */
+.sidebar{position:sticky;top:calc(var(--ann-h) + var(--head-h) + 16px);display:grid;gap:var(--sp-3)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px}
+.panel h2{font-size:14.5px;color:var(--main-deep);margin-bottom:9px;font-family:var(--serif);letter-spacing:.4px}
+.side-nav{list-style:none;padding:0;margin:0;font-size:13.6px}
+.side-nav a{display:block;padding:5px 9px;border-left:2px solid transparent;color:var(--ink-soft);border-radius:0 4px 4px 0;line-height:1.5}
+.side-nav a:hover{background:#f1ede1;color:var(--main-deep)}
+.side-nav a.active{border-left-color:var(--accent);background:#f1ede1;color:var(--main-deep);font-weight:600}
+.rank{list-style:none;padding:0;margin:0;counter-reset:rk}
+.rank li{
+  counter-increment:rk;display:grid;grid-template-columns:20px 1fr auto;gap:8px;align-items:baseline;
+  padding:6px 0;border-bottom:1px dashed var(--line-soft);font-size:13.4px;
+}
+.rank li:last-child{border-bottom:0}
+.rank li::before{content:counter(rk);font-family:var(--serif);color:var(--gold);font-weight:700;font-size:13px}
+.rank a{color:var(--ink);line-height:1.5}
+.rank a:hover{color:var(--accent)}
+.rank em{font-style:normal;font-size:11.5px;color:var(--ink-mute)}
+.panel .hintline{font-size:12.5px;color:var(--ink-mute);line-height:1.65;margin:8px 0 0;padding-top:8px;border-top:1px dashed var(--line-soft)}
+.panel .kv{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);padding:3px 0}
+.panel .kv b{color:var(--main-deep);font-variant-numeric:tabular-nums}
+
+/* ===== 页脚 ===== */
+.foot{background:var(--main-deep);color:#cfd8cd;padding:var(--sp-5) 0 var(--sp-3);font-size:13.4px}
+.foot .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:var(--sp-4)}
+.foot .brand b{color:#f2ecdd;font-size:17px}
+.foot h3{color:#f2ecdd;font-size:13.8px;margin-bottom:9px;letter-spacing:.6px;font-family:var(--serif)}
+.foot p{color:#a9b6ab;line-height:1.75;margin:0 0 8px}
+.foot ul{list-style:none;padding:0;margin:0;line-height:2}
+.foot a{color:#cfd8cd}
+.foot a:hover{color:#fff;text-decoration:underline}
+.foot .bottom{
+  grid-column:1/-1;border-top:1px solid #3a5347;margin-top:var(--sp-3);padding-top:14px;
+  display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;font-size:12.4px;color:#94a396;
+}
+.foot .disclaimer{grid-column:1/-1;font-size:12.3px;color:#93a297;line-height:1.7;background:#1c2f28;border:1px solid #33503f;border-radius:var(--r-sm);padding:9px 12px}
+
+/* 回顶 */
+.totop{
+  position:fixed;right:18px;bottom:18px;z-index:70;width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--line);background:var(--card);color:var(--main-deep);cursor:pointer;
+  box-shadow:var(--shadow);display:none;align-items:center;justify-content:center;font-size:17px;
+}
+.totop.show{display:flex}
+.totop:hover{background:#eef1e6}
+
+/* ===== 响应式 ===== */
+@media (max-width:1000px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:static;order:2;margin-top:var(--sp-3)}
+  .cards{grid-template-columns:1fr 1fr}
+  .overview{grid-template-columns:1fr 1fr}
+  .trust{grid-template-columns:1fr}
+  .hero .wrap{grid-template-columns:1fr;gap:var(--sp-4);padding-top:var(--sp-5)}
+  .hero-art{height:240px;max-width:520px}
+  .foot .wrap{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  :root{--ann-h:auto}
+  .annbar{position:sticky;top:0;height:auto;padding:5px 0}
+  .annbar .wrap{flex-wrap:wrap;gap:6px}
+  .annbar p{white-space:normal;font-size:12.4px;line-height:1.5}
+  .head{height:auto;position:sticky;top:0}
+  .head .wrap{padding:9px 0;flex-wrap:wrap;gap:9px}
+  .menu-btn{display:inline-flex;align-items:center;gap:6px}
+  .nav{
+    display:none;order:5;width:100%;flex-wrap:wrap;gap:4px;
+    border-top:1px solid var(--line);padding-top:8px;
+  }
+  .nav.open{display:flex}
+  .nav a{padding:6px 9px;font-size:13.6px;background:#efeade}
+  .head-tools{margin-left:auto}
+  .search input{width:124px}
+  .search input:focus{width:150px}
+  .search-result{width:min(280px,calc(100vw - 36px))}
+  .cards{grid-template-columns:1fr}
+  .overview{grid-template-columns:1fr}
+  .news{grid-template-columns:1fr}
+  .updates li{grid-template-columns:1fr;gap:3px}
+  .updates .src{justify-self:start}
+  .deep{padding:var(--sp-3) var(--sp-3) var(--sp-2)}
+  .hero-stats{gap:var(--sp-3)}
+  .foot .wrap{grid-template-columns:1fr}
+  .claim{font-size:14px}
+  .check-table{font-size:12.8px;display:block;overflow-x:auto}
+  .figure img{width:100%;height:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important;animation:none !important}
+  .card:hover,.btn:hover,.tagcloud a:hover{transform:none !important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 公告条 -->
+<div class="annbar" id="announce">
+  <div class="wrap">
+    <span class="tag">更新</span>
+    <p><a href="/#updates">集芳阁云搜官网</a> 索引库 11 月 6 日完成第 12 批校订：新增 47 条曲谱收录、修订 9 条同人文本的来源标注，收录规则说明同步更新至 v2.3。</p>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="head">
+  <div class="wrap">
+    <a class="brand" href="/#top" aria-label="返回首页顶部">
+      <svg viewBox="0 0 40 40" role="img" aria-hidden="true">
+        <rect x="1" y="1" width="38" height="38" rx="9" fill="#2f4f43"/>
+        <circle cx="18" cy="17" r="8" fill="none" stroke="#e8d9b5" stroke-width="2.6"/>
+        <line x1="23.6" y1="22.6" x2="31" y2="30" stroke="#e8d9b5" stroke-width="3" stroke-linecap="round"/>
+        <path d="M13 12.5c2.2-1.6 4.8-2 7.4-1.2" fill="none" stroke="#c8a86b" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="15.4" cy="17.6" r="1.5" fill="#c8a86b"/>
+      </svg>
+      <b>集芳阁云搜官网</b>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">
+      <span aria-hidden="true">☰</span> 频道
+    </button>
+
+    <nav class="nav" id="mainNav" aria-label="主题频道导航">
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选内容</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#channels">分类入口</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#voices">用户评论</a>
+    </nav>
+
+    <div class="head-tools">
+      <div class="search" role="search">
+        <label for="siteSearch" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">站内查找</label>
+        <input type="search" id="siteSearch" placeholder="找条目、频道、规则…" autocomplete="off">
+        <button type="button" id="searchBtn" aria-label="查找">⌕</button>
+        <div class="search-result" id="searchResult" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<!-- 首屏 -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="hero-eyebrow"><i></i> 跨站索引 · 第 12 批校订完成</span>
+      <h1>集芳阁云搜官网</h1>
+      <p class="lead">把散落在古风图库、同人文本仓、曲谱名录与手作工坊里的条目，按来源、时间与可核验痕迹整理成可检索的目录。每条收录都标注抓取日期与原始出处，检索结果给出对应页面的锚点位置，不用来回翻找。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#channels">进入分类目录 <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="/#deep">先读收录规则解析</a>
+      </div>
+      <ul class="hero-stats">
+        <li><b>3,846</b><span>现行收录条目</span></li>
+        <li><b>11</b><span>垂类目录</span></li>
+        <li><b>v2.3</b><span>校订规则版本</span></li>
+        <li><b>10-22</b><span>本轮抓取起始日</span></li>
+      </ul>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 420 320" role="img" aria-labelledby="heroArtTitle">
+        <title id="heroArtTitle">由检索框、层叠目录页与来源连线组成的原创构图</title>
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e7e1cf"/><stop offset="1" stop-color="#d8ddc6"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2f4f43"/><stop offset="1" stop-color="#223a31"/>
+          </linearGradient>
+        </defs>
+        <rect x="18" y="26" width="384" height="268" rx="18" fill="url(#g1)" opacity=".85"/>
+        <g transform="translate(52 58) rotate(-5)">
+          <rect width="150" height="196" rx="10" fill="#fffdf8" stroke="#d9d2c1"/>
+          <rect x="16" y="18" width="76" height="7" rx="3.5" fill="#c8a86b"/>
+          <rect x="16" y="36" width="112" height="5" rx="2.5" fill="#dfd8c7"/>
+          <rect x="16" y="48" width="95" height="5" rx="2.5" fill="#dfd8c7"/>
+          <rect x="16" y="60" width="106" height="5" rx="2.5" fill="#dfd8c7"/>
+          <rect x="16" y="84" width="60" height="60" rx="6" fill="#e5edd9"/>
+          <circle cx="46" cy="108" r="12" fill="none" stroke="#2f4f43" stroke-width="2.4"/>
+          <line x1="55" y1="117" x2="63" y2="125" stroke="#2f4f43" stroke-width="2.4" stroke-linecap="round"/>
+          <rect x="16" y="158" width="112" height="5" rx="2.5" fill="#dfd8c7"/>
+          <rect x="16" y="170" width="84" height="5" rx="2.5" fill="#dfd8c7"/>
+        </g>
+        <g transform="translate(216 46)">
+          <rect width="152" height="230" rx="12" fill="#fffdf8" stroke="#d9d2c1"/>
+          <rect x="14" y="14" width="124" height="30" rx="15" fill="#eef1e6" stroke="#cfdcc4"/>
+          <circle cx="31" cy="29" r="6" fill="none" stroke="#2f4f43" stroke-width="2"/>
+          <line x1="35.5" y1="33.5" x2="40" y2="38" stroke="#2f4f43" stroke-width="2" stroke-linecap="round"/>
+          <rect x="48" y="25" width="62" height="5.5" rx="2.75" fill="#c3ccbd"/>
+          <g fill="#f1ecde" stroke="#e0d9c8">
+            <rect x="14" y="56" width="124" height="28" rx="6"/>
+            <rect x="14" y="92" width="124" height="28" rx="6"/>
+            <rect x="14" y="128" width="124" height="28" rx="6"/>
+          </g>
+          <g fill="#a9b6a0">
+            <rect x="24" y="66" width="52" height="5" rx="2.5"/>
+            <rect x="24" y="102" width="70" height="5" rx="2.5"/>
+            <rect x="24" y="138" width="44" height="5" rx="2.5"/>
+          </g>
+          <circle cx="124" cy="70" r="4" fill="#c8a86b"/>
+          <circle cx="124" cy="106" r="4" fill="#c8a86b"/>
+          <circle cx="124" cy="142" r="4" fill="#c8a86b"/>
+          <rect x="14" y="172" width="124" height="40" rx="8" fill="url(#g2)"/>
+          <rect x="26" y="184" width="58" height="6" rx="3" fill="#e8d9b5"/>
+          <rect x="26" y="196" width="82" height="4.5" rx="2.25" fill="#8fa597"/>
+        </g>
+        <g stroke="#a8552c" stroke-width="1.6" stroke-dasharray="4 4" fill="none" opacity=".8">
+          <path d="M164 214 C186 236 208 236 226 226"/>
+          <path d="M252 118 C282 108 302 112 316 126"/>
+        </g>
+        <circle cx="252" cy="118" r="4.5" fill="#a8552c"/>
+        <circle cx="164" cy="214" r="4.5" fill="#a8552c"/>
+        <text x="322" y="288" font-size="11" fill="#6f7a74" font-family="sans-serif">索引层 → 来源层</text>
+      </svg>
+      <div class="hero-note"><b>校订口径：</b>同一页面若在 30 天内改动两次以上，标注两个抓取日期，不做合并。</div>
+    </div>
+  </div>
+</div>
+
+<!-- 主体 -->
+<div class="wrap layout">
+  <main>
+
+    <!-- 领域概览 -->
+    <section class="sec" id="overview">
+      <div class="sec-head">
+        <h2>领域概览：古风垂类资源索引在做什么</h2>
+      </div>
+      <p class="sec-intro">古风图库、同人文本仓、曲谱名录、手作工坊四类来源的更新节奏不同。索引要处理的不是“有没有”，而是“哪一版、谁改的、能不能溯源”。</p>
+      <ul class="overview">
+        <li><span class="num">01</span><div><strong>图库条目</strong><span>按画师署名与首发平台建条目，标注分辨率、授权声明与二次上传情况。</span></div></li>
+        <li><span class="num">02</span><div><strong>同人文本</strong><span>以作品名＋配对标签为索引键，区分完结、连载、修订稿三种状态。</span></div></li>
+        <li><span class="num">03</span><div><strong>曲谱名录</strong><span>记谱者、简谱或五线谱、可演奏性备注，附首次发布帖编号。</span></div></li>
+        <li><span class="num">04</span><div><strong>手作工坊</strong><span>簪娘、绒花、拓印三类教程，按材料清单与成品图对应关系核对。</span></div></li>
+        <li><span class="num">05</span><div><strong>来源分层</strong><span>原作者直发、授权转载、无署名搬运，三档可信度决定是否收录进主目录。</span></div></li>
+        <li><span class="num">06</span><div><strong>版本比对</strong><span>同一曲谱两个版本并列展示差异行，避免检索者拿到错调号。</span></div></li>
+      </ul>
+    </section>
+
+    <!-- 精选内容推荐 -->
+    <section class="sec" id="featured">
+      <div class="sec-head">
+        <h2>精选内容推荐</h2>
+        <a class="more" href="/#channels">按分类浏览 →</a>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/jifangge-card-a/640/400" width="640" height="400" loading="lazy" alt="展开的线装册页上排列着手抄曲谱与红色校订标记">
+            <span class="badge">曲谱</span>
+          </div>
+          <div class="card-body">
+            <h3>《落梅引》简谱与五线谱对照收录</h3>
+            <p>两个版本在第七小节起出现调号差异。收录页并列两行，标明记谱者为“临水阁·阿棠”，修订日期 10 月 29 日。</p>
+            <div class="card-meta"><span>双版本</span><span class="hot">校订 2 次</span><span>10-29</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/jifangge-card-b/640/400" width="640" height="400" loading="lazy" alt="书桌上摊开的同人文本打印稿与贴有标签的活页夹">
+            <span class="badge">同人文本</span>
+          </div>
+          <div class="card-body">
+            <h3>《长夜渡》修订稿与初版差异清单</h3>
+            <p>作者“青芜”在 11 月 2 日发布修订说明，删改第 12 至 15 章共 1,900 余字。索引保留两版导语原文措辞以便对照。</p>
+            <div class="card-meta"><span>完结</span><span>修订稿</span><span>11-02</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/jifangge-card-c/640/400" width="640" height="400" loading="lazy" alt="工作台上散放的绒花半成品、蚕丝线与铜丝">
+            <span class="badge">手作</span>
+          </div>
+          <div class="card-body">
+            <h3>绒花“仿点翠”配色材料清单核对</h3>
+            <p>工坊账号“南枝手记”给出的蚕丝色号与成品图存在偏差，索引备注了替代色 03 号与两种可购渠道的到货时间。</p>
+            <div class="card-meta"><span>教程</span><span>材料清单</span><span>10-30</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section class="sec" id="updates">
+      <div class="sec-head">
+        <h2>最新更新</h2>
+        <span class="more">抓取窗口 10-22 至 11-08</span>
+      </div>
+      <ul class="updates">
+        <li>
+          <time datetime="2026-11-07">11-07</time>
+          <div><a href="/#channels">新增“簪稿图谱”子目录</a><span class="desc">收录 12 张簪娘署名手绘稿，按花型与簪脚结构分组，附成品对照。</span></div>
+          <span class="src">工坊层</span>
+        </li>
+        <li>
+          <time datetime="2026-11-06">11-06</time>
+          <div><a href="/#deep">校订规则 v2.3 上线</a><span class="desc">同页多次改动不再择一保留，改为并列两个抓取日期；此条影响约 63 条既有记录。</span></div>
+          <span class="src">规则层</span>
+        </li>
+        <li>
+          <time datetime="2026-11-04">11-04</time>
+          <div><a href="/#featured">《长夜渡》修订稿导语补齐</a><span class="desc">补录作者 11-02 修订说明原文，正文页码偏移量一并标出。</span></div>
+          <span class="src">文本层</span>
+        </li>
+        <li>
+          <time datetime="2026-11-01">11-01</time>
+          <div><a href="/#channels">“拓印纹样”分类拆分</a><span class="desc">原“器物纹样”拆为拓印、织绣两栏，迁移 38 条，其中 5 条因来源不清降级。</span></div>
+          <span class="src">分类层</span>
+        </li>
+        <li>
+          <time datetime="2026-10-29">10-29</time>
+          <div><a href="/#deep">《落梅引》双版本并列</a><span class="desc">简谱与五线谱第 7 小节调号差异已标红，记谱者署名核对完成。</span></div>
+          <span class="src">曲谱层</span>
+        </li>
+        <li>
+          <time datetime="2026-10-25">10-25</time>
+          <div><a href="/#voices">评论入口新增条目引用标记</a><span class="desc">留言可挂接具体条目编号，便于后续把反馈落到单条记录上。</span></div>
+          <span class="src">互动层</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 分类入口 -->
+    <section class="sec" id="channels">
+      <div class="sec-head">
+        <h2>分类入口</h2>
+        <span class="more">11 个垂类目录</span>
+      </div>
+      <p class="sec-intro">点进任一分类，先看到来源分层与最近抓取日期，再看到条目本身。数量为该分类现行收录数，不含已降级记录。</p>
+      <ul class="chips">
+        <li><a href="/#featured">古风插画图库 <em>742</em></a></li>
+        <li><a href="/#featured">同人文本仓 <em>615</em></a></li>
+        <li><a href="/#featured">古琴曲谱名录 <em>288</em></a></li>
+        <li><a href="/#featured">琵琶指法谱 <em>173</em></a></li>
+        <li><a href="/#featured">绒花与缠花教程 <em>356</em></a></li>
+        <li><a href="/#featured">簪稿图谱 <em>214</em></a></li>
+        <li><a href="/#featured">拓印纹样 <em>169</em></a></li>
+        <li><a href="/#featured">织绣纹样 <em>231</em></a></li>
+        <li><a href="/#featured">汉服形制考据 <em>302</em></a></li>
+        <li><a href="/#featured">妆造复原记录 <em>188</em></a></li>
+        <li><a href="/#featured">香方与合香笔记 <em>140</em></a></li>
+      </ul>
+    </section>
+
+    <!-- 深度解析 -->
+    <section class="sec" id="deep">
+      <div class="deep">
+        <div class="kicker">深度解析</div>
+        <h2>索引条目的可信度，取决于能不能指回一个可核对的原始发布位置</h2>
+        <div class="stand">
+          <p>索引站最容易做的事是“把链接堆起来”，最难做的是判断一条记录值不值得被检索到。判断标准可以很具体：打开条目，能不能在三步之内找到原始发布位置、发布者、发布时间，以及这条内容有没有被改过。</p>
+        </div>
+
+        <h3>一、三次抓取比对：同一页面的三种状态</h3>
+        <p>以《落梅引》曲谱的条目页为例。10 月 22 日首次抓取时，页面只有简谱一张图，记谱者署名为“临水阁·阿棠”，发布日期写作“10 月中”。10 月 29 日第二次抓取，作者补了五线谱版本，并把发布日期改成明确的 10 月 21 日。11 月 3 日第三次抓取，第七小节起调号由 D 改为 G，附了一句“原调记错，已更正”。</p>
+        <div class="claim">
+          <b>可反驳的判断：</b>三次抓取里，只有第三次改动属于“实质性修订”，前两次只是补充与规范化日期。索引若把三次当成同等重要，检索者会被无意义的变动提示淹没。
+        </div>
+        <p>这条判断有明确的反驳面：有人认为补上五线谱同样是实质改动，因为多了一个可用版本。索引采取的处理是——把版本增补归入“内容扩展”，把调号修改归入“内容更正”，两者在不同字段显示，后者才触发醒目提示。区分方法写在收录规则 v2.3 第 4 条里，任何人都能拿这条规则去核对其他条目。</p>
+
+        <h3>二、来源分层：直发、授权转载、无署名搬运</h3>
+        <p>同人文本仓里有三个来源层，处理方式不同。原作者账号直发的，记录账号名与帖子编号；有明确授权说明的转载，记录授权截图所在帖；无署名的搬运，只做“存在性记录”，不进主目录。10 月 30 日上线的“织绣纹样”迁移里，有 5 条因此被降级，原因都写在记录备注中。</p>
+        <table class="check-table">
+          <caption>三类来源的核对项与处理方式（依据 v2.3 规则）</caption>
+          <thead>
+            <tr><th>来源层</th><th>必填核对项</th><th>处理方式</th><th>示例条目</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>作者直发</td><td>账号名、帖子编号、发布日期</td><td>进主目录，参与检索排序</td><td>《长夜渡》修订说明帖</td></tr>
+            <tr><td>授权转载</td><td>原作者、授权帖编号、转载者</td><td>进主目录，标注转载链</td><td>“南枝手记”绒花教程合集</td></tr>
+            <tr><td>无署名搬运</td><td>仅记录发现位置与抓取日</td><td>不进主目录，留存在备查层</td><td>某图库二次上传的簪稿</td></tr>
+          </tbody>
+        </table>
+        <p>这张表的意义在于把“判断”拆成可核对结构：只要对一条记录逐项打勾，来源层就定了，不需要争论谁更“懂”。10 月 25 日之后，评论入口允许挂接条目编号，用户反馈也落在这张表的某一格里，而不是停留在泛泛的“感觉不对”。</p>
+
+        <h3>三、说法差异：两个账号对同一簪稿的署名冲突</h3>
+        <p>10 月 26 日，两个工坊账号先后发布同一组缠花簪稿，A 账号称“原创于 2025 年冬”，B 账号称“初稿 2024 年秋，A 为合作画手”。索引当时记录了两条，标注“署名存在争议”。11 月 1 日 B 账号补充了一张带时间戳的草图照片，A 账号未再回应。</p>
+        <div class="claim">
+          <b>事实：</b>两条记录并存，抓取日期分别为 10-26 与 10-27。<br>
+          <b>回应：</b>B 账号 11-01 补图，A 账号无公开回应。<br>
+          <b>转述：</b>评论区有用户称“两人曾同社”，来源为用户留言，未见第三方佐证。<br>
+          <b>推测：</b>若草图时间戳为真，署名应以前一版为准——这一条保留为推测，未写入主目录署名字段。
+        </div>
+        <p>把事实、回应、转述、推测拆开写，是为了避免一条记录里混着四种强度不同的信息。用户搜到该条目时，看到的是分层结果，不是一段“据称”带过的叙述。这类争议条目目前共 7 条，均在备查层可见。</p>
+
+        <figure class="figure">
+          <img src="https://picsum.photos/seed/jifangge-deep/960/440" width="960" height="440" loading="lazy" alt="并排放置的两份手绘花簪草图，右侧一份带有日期角标">
+          <figcaption>署名争议条目附图示例：左侧为 A 账号发布稿，右侧为 B 账号 11 月 1 日补充的时间戳草图。</figcaption>
+        </figure>
+
+        <h3>四、规则前后变化：v2.2 到 v2.3 改了什么</h3>
+        <p>v2.2 的处理是“同页多次改动择一保留”，通常是保留最新版本。问题在于，曲谱调号这类修订一旦覆盖，检索者就看不到原来的错在哪，也无法判断记谱者的校对能力。v2.3 改为并列两个抓取日期，并保留改动摘要。10 月 22 日至 11 月 6 日之间受影响的记录约 63 条，其中曲谱类 21 条、文本类 29 条、工坊类 13 条。</p>
+        <p>规则变化带来的直接后果是条目页变长。索引的取舍是：曲谱和文本允许变长，图库条目仍只保留最新一次抓取，因为图片的中间版本对检索几乎没有用处。这个取舍可以被质疑——有人认为图片改色同样重要——目前的处理是在备注里记一句“曾改色”，不展开。</p>
+      </div>
+    </section>
+
+    <!-- 体验指南 -->
+    <section class="sec" id="guide">
+      <div class="sec-head">
+        <h2>体验指南</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>先定分类，再输关键词</strong><span>比如找曲谱，先在“古琴曲谱名录”里搜曲名，比全站搜少一半干扰项。全站搜适合只知道片段旋律或记谱者名的情况。</span></li>
+        <li><strong>看抓取日期，不看“更新时间”字样</strong><span>条目页顶部有两个日期：首次抓取与最近抓取。10-22 与 11-06 这类具体日期比“刚刚更新”更可靠。</span></li>
+        <li><strong>核对来源层再引用</strong><span>作者直发与授权转载可以引用到具体帖子；无署名搬运只作线索，写作或二次创作前建议回到原始账号确认。</span></li>
+        <li><strong>遇到双版本先读差异行</strong><span>曲谱与文本的并列版本会把差异行标出。第 7 小节调号不同这类细节，直接看标红行比通读两份快。</span></li>
+        <li><strong>把问题挂到条目编号上</strong><span>评论时填条目编号，反馈会进到对应记录的备查层。没有编号的留言仍保留，但不进入条目修订流程。</span></li>
+      </ol>
+    </section>
+
+    <!-- FAQ -->
+    <section class="sec" id="faq">
+      <div class="sec-head">
+        <h2>常见问答</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>古琴曲谱条目里的“调号差异”是怎么回事？</summary>
+          <div class="a"><p>同一首曲子的简谱与五线谱，可能由不同记谱者在不同时间完成，转调时容易出错。索引把两个版本的第七小节起逐行对照，标出不一致处，并记录记谱者与修订日期。《落梅引》就是 10-29 补录五线谱后发现调号不一致的。</p></div>
+        </details>
+        <details>
+          <summary>同人文本仓里“修订稿”和“连载中”怎么区分？</summary>
+          <div class="a"><p>修订稿指全文已完结、作者又发布改动说明的版本，通常带删改字数与章节范围，例如《长夜渡》11-02 的说明写了第 12 至 15 章、约 1,900 字。连载中指尚未完结、章节数仍在增加的作品。两者在条目里用不同状态标签，混在一起会让检索者误判完成度。</p></div>
+        </details>
+        <details>
+          <summary>簪稿署名有争议时，索引站怎么处理？</summary>
+          <div class="a"><p>两条记录并存，署名栏标“存在争议”，并把事实、回应、转述、推测分开写。10-26 与 10-27 的两条簪稿记录就是按这个方式处理的，B 账号 11-01 补的草图照片记在“回应”项下，用户留言里的说法记在“转述”项下，均未升格为署名依据。</p></div>
+        </details>
+        <details>
+          <summary>无署名搬运的内容还会出现在搜索结果里吗？</summary>
+          <div class="a"><p>会出现在备查层，不进主目录。搜索时主目录结果优先，备查层结果单独折叠，并标注“来源不清”。10-01 至 11-01 之间降级的 5 条织绣纹样记录都用这种方式存放，检索者仍可查看，但不会被误当作可引用来源。</p></div>
+        </details>
+        <details>
+          <summary>绒花教程的材料色号对不上成品图，能报错吗？</summary>
+          <div class="a"><p>可以。在评论里填条目编号并写出实际色号与成品差异，反馈会进到该条目的备查层。“南枝手记”的仿点翠配色条目已有两条此类反馈，备注里写了替代色 03 号与到货时间，供后来者参考。</p></div>
+        </details>
+        <details>
+          <summary>索引多久抓一次？10-22 之后的数据完整吗？</summary>
+          <div class="a"><p>常规抓取按周进行，本轮窗口从 10-22 到 11-08。完整度按分类不同：曲谱与文本类覆盖率较高，因为发布位置集中；图库类因二次上传多，抓取后会做一轮去重，耗时更长，部分分类的最近抓取日期会晚于 11-06。</p></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 用户评论 -->
+    <section class="sec" id="voices">
+      <div class="sec-head">
+        <h2>用户评论</h2>
+        <span class="more">留言可挂条目编号</span>
+      </div>
+      <div class="voices">
+        <div class="voice">
+          <span class="avatar" aria-hidden="true">棠</span>
+          <div>
+            <div class="voice-head"><b>临水听棠</b><time datetime="2026-11-06">11-06</time><span class="to">#QP-0288《落梅引》</span></div>
+            <p>调号那条改得对。我按简谱弹到第七小节就觉得不对，换成五线谱才顺。要是只留最新版，我根本不知道原来错在哪。</p>
+          </div>
+        </div>
+        <div class="voice">
+          <span class="avatar" aria-hidden="true">青</span>
+          <div>
+            <div class="voice-head"><b>青芜_写字的</b><time datetime="2026-11-03">11-03</time><span class="to">#TX-0615《长夜渡》</span></div>
+            <p>修订说明里写的删改 1,900 字，实际我数了下第 12 章单独就删了 700 多。索引照抄原文没问题，但最好把章节分布也列出来。</p>
+          </div>
+        </div>
+        <div class="voice">
+          <span class="avatar" aria-hidden="true">南</span>
+          <div>
+            <div class="voice-head"><b>南枝手记</b><time datetime="2026-11-02">11-02</time><span class="to">#HG-0356 绒花配色</span></div>
+            <p>03 号色是我后来换的，原色号那批蚕丝断货了。条目备注写得比我原帖清楚，认了。</p>
+          </div>
+        </div>
+        <div class="voice">
+          <span class="avatar" aria-hidden="true">砚</span>
+          <div>
+            <div class="voice-head"><b>砚池边</b><time datetime="2026-11-01">11-01</time><span class="to">#ZJ-0214 缠花簪稿</span></div>
+            <p>两个账号的说法我都不想站。草图时间戳这种东西可以伪造，除非有第三方在场。索引把推测和事实分开写，这点比大部分目录强。</p>
+          </div>
+        </div>
+        <div class="voice">
+          <span class="avatar" aria-hidden="true">阿</span>
+          <div>
+            <div class="voice-head"><b>阿箬不吃香菜</b><time datetime="2026-10-31">10-31</time></div>
+            <p>图库分类还是太挤，搜“簪”能出来七十多条，翻到第十页全是同一个人的二次上传。希望能按画师账号合并一下，别一条一条列。</p>
+          </div>
+        </div>
+        <div class="voice">
+          <span class="avatar" aria-hidden="true">槐</span>
+          <div>
+            <div class="voice-head"><b>槐序十七</b><time datetime="2026-10-28">10-28</time><span class="to">#TX-0602 拓印纹样</span></div>
+            <p>拓印纹样拆成两栏之后好找多了。之前“器物纹样”里织绣和石刻混着，想找一块宋墓石刻的拓片要翻半天。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section class="sec" id="news">
+      <div class="sec-head">
+        <h2>相关资讯</h2>
+      </div>
+      <ul class="news">
+        <li>
+          <time datetime="2026-11-07">11-07</time>
+          <a href="/#channels">簪稿图谱子目录上线，12 张手绘稿附成品对照</a>
+          <p>花型与簪脚结构分组，其中 3 张标注了“合作稿”，署名栏待补。</p>
+        </li>
+        <li>
+          <time datetime="2026-11-06">11-06</time>
+          <a href="/#deep">校订规则 v2.3 影响 63 条既有记录</a>
+          <p>曲谱 21 条、文本 29 条、工坊 13 条改为并列抓取日期，条目页长度随之增加。</p>
+        </li>
+        <li>
+          <time datetime="2026-11-04">11-04</time>
+          <a href="/#updates">《长夜渡》导语补齐，页码偏移量同步标出</a>
+          <p>按作者 11-02 说明原文录入，第 12 至 15 章之后的页码与初版不连续。</p>
+        </li>
+        <li>
+          <time datetime="2026-11-01">11-01</time>
+          <a href="/#channels">织绣纹样从器物纹样中拆出，5 条降级</a>
+          <p>降级原因集中在来源不清：无可核对署名、无授权说明。</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="sec" id="related">
+      <div class="sec-head">
+        <h2>相关推荐</h2>
+      </div>
+      <ul class="tagcloud">
+        <li><a href="/#featured">古琴曲谱调号对照</a></li>
+        <li><a href="/#featured">同人文本修订稿导语</a></li>
+        <li><a href="/#featured">缠花簪稿署名核对</a></li>
+        <li><a href="/#featured">绒花仿点翠配色</a></li>
+        <li><a href="/#featured">拓印纹样来源分层</a></li>
+        <li><a href="/#featured">汉服形制考据条目</a></li>
+        <li><a href="/#featured">妆造复原记录时间线</a></li>
+        <li><a href="/#featured">香方合香笔记索引</a></li>
+        <li><a href="/#deep">收录规则 v2.3 全文</a></li>
+        <li><a href="/#deep">说法差异记录方法</a></li>
+      </ul>
+    </section>
+
+    <!-- 可信度分层 -->
+    <section class="sec" id="trust">
+      <div class="sec-head">
+        <h2>可信度分层</h2>
+      </div>
+      <p class="sec-intro">分层不是打分，而是回答“能不能指回一个可核对的原始位置”。三档之间可以因为补图、补授权而移动。</p>
+      <div class="trust">
+        <div class="tier t1">
+          <header><span class="dot" aria-hidden="true"></span><h3>可引用</h3></header>
+          <ul>
+            <li>原作者账号直发，帖子编号可查</li>
+            <li>抓取日期与发布日期一致或相差一天内</li>
+            <li>曲谱带记谱者署名与修订记录</li>
+          </ul>
+          <div class="base">当前 2,104 条 · 约占 55%</div>
+        </div>
+        <div class="tier t2">
+          <header><span class="dot" aria-hidden="true"></span><h3>待核</h3></header>
+          <ul>
+            <li>有授权说明但截图缺失</li>
+            <li>署名冲突未决，事实与推测分离记录</li>
+            <li>成品图与材料清单存在色号偏差</li>
+          </ul>
+          <div class="base">当前 1,379 条 · 约占 36%</div>
+        </div>
+        <div class="tier t3">
+          <header><span class="dot" aria-hidden="true"></span><h3>备查</h3></header>
+          <ul>
+            <li>无署名搬运，仅记发现位置</li>
+            <li>抓取日期晚于发布日期超过 30 天</li>
+            <li>页面已被删除，仅有快照文字</li>
+          </ul>
+          <div class="base">当前 363 条 · 约占 9%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 时间线 -->
+    <section class="sec" id="timeline">
+      <div class="sec-head">
+        <h2>本轮校订时间线</h2>
+      </div>
+      <ul class="timeline">
+        <li><time datetime="2026-10-22">10-22</time><b>第 12 批抓取启动</b><span>首批 210 条，曲谱与文本类优先，图库类随后去重。</span></li>
+        <li><time datetime="2026-10-25">10-25</time><b>评论挂接条目编号上线</b><span>反馈进入对应记录的备查层，不再汇总成一封邮件。</span></li>
+        <li><time datetime="2026-10-26">10-26</time><b>缠花簪稿署名声明确认</b><span>A、B 两账号说法冲突，两条记录均标注“存在争议”。</span></li>
+        <li><time datetime="2026-10-29">10-29</time><b>《落梅引》补录五线谱</b><span>发现第七小节起调号差异，并列两版，标红差异行。</span></li>
+        <li><time datetime="2026-11-01">11-01</time><b>拓印纹样分类拆分完成</b><span>迁移 38 条，5 条因来源不清降入备查层。</span></li>
+        <li><time datetime="2026-11-02">11-02</time><b>《长夜渡》修订说明发布</b><span>作者列出删改章节与字数，11-04 补录入条目。</span></li>
+        <li><time datetime="2026-11-06">11-06</time><b>校订规则 v2.3 生效</b><span>同页多次改动改为并列抓取日期，受影响的记录分批重录。</span></li>
+        <li><time datetime="2026-11-07">11-07</time><b>簪稿图谱子目录开放</b><span>12 张手绘稿与成品图对照，3 张待补署名。</span></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- 侧栏 -->
+  <aside class="sidebar" aria-label="侧栏导航与榜单">
+    <div class="panel">
+      <h2>栏目导航</h2>
+      <ul class="side-nav" id="sideNav">
+        <li><a href="/#overview">领域概览</a></li>
+        <li><a href="/#featured">精选内容推荐</a></li>
+        <li><a href="/#updates">最新更新</a></li>
+        <li><a href="/#channels">分类入口</a></li>
+        <li><a href="/#deep">深度解析</a></li>
+        <li><a href="/#guide">体验指南</a></li>
+        <li><a href="/#faq">常见问答</a></li>
+        <li><a href="/#voices">用户评论</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+        <li><a href="/#related">相关推荐</a></li>
+        <li><a href="/#trust">可信度分层</a></li>
+        <li><a href="/#timeline">校订时间线</a></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>本季检索热度</h2>
+      <ol class="rank">
+        <li><a href="/#featured">古琴曲谱调号对照</a><em>QP</em></li>
+        <li><a href="/#featured">同人文本修订稿导语</a><em>TX</em></li>
+        <li><a href="/#featured">绒花仿点翠配色</a><em>HG</em></li>
+        <li><a href="/#featured">缠花簪稿署名核对</a><em>ZJ</em></li>
+        <li><a href="/#featured">拓印纹样来源分层</a><em>TY</em></li>
+      </ol>
+      <p class="hintline">热度按 10-08 至 11-07 的站内检索词归并，同一词的不同写法合并计数。</p>
+    </div>
+
+    <div class="panel">
+      <h2>索引现状</h2>
+      <div class="kv"><span>现行收录</span><b>3,846 条</b></div>
+      <div class="kv"><span>可引用</span><b>2,104 条</b></div>
+      <div class="kv"><span>待核</span><b>1,379 条</b></div>
+      <div class="kv"><span>备查</span><b>363 条</b></div>
+      <div class="kv"><span>规则版本</span><b>v2.3</b></div>
+      <p class="hintline">数据随每批校订变动，最近一次为 11-06。</p>
+    </div>
+  </aside>
+</div>
+
+<!-- 页脚 -->
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <div class="brand" style="margin-bottom:10px">
+        <svg viewBox="0 0 40 40" width="30" height="30" role="img" aria-hidden="true">
+          <rect x="1" y="1" width="38" height="38" rx="9" fill="#3a6354"/>
+          <circle cx="18" cy="17" r="8" fill="none" stroke="#e8d9b5" stroke-width="2.6"/>
+          <line x1="23.6" y1="22.6" x2="31" y2="30" stroke="#e8d9b5" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <b>集芳阁云搜官网</b>
+      </div>
+      <p>以来源可核为第一原则的垂类目录，覆盖图库、文本、曲谱、工坊四类，条目按抓取日期与署名状态归档。</p>
+      <p style="font-size:12.4px;color:#93a297">页面更新时间 11-07，对应正文“簪稿图谱子目录上线”与“索引现状”两项。</p>
+    </div>
+    <div>
+      <h3>频道入口</h3>
+      <ul>
+        <li><a href="/#channels">古风插画图库</a></li>
+        <li><a href="/#channels">同人文本仓</a></li>
+        <li><a href="/#channels">古琴曲谱名录</a></li>
+        <li><a href="/#channels">绒花与缠花教程</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>规则与说明</h3>
+      <ul>
+        <li><a href="/#deep">收录规则 v2.3</a></li>
+        <li><a href="/#trust">可信度分层</a></li>
+        <li><a href="/#guide">使用指南</a></li>
+        <li><a href="/#faq">常见问答</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>互动</h3>
+      <ul>
+        <li><a href="/#voices">用户评论</a></li>
+        <li><a href="/#updates">校订动态</a></li>
+        <li><a href="/#timeline">本轮时间线</a></li>
+        <li><a href="/#related">相关推荐</a></li>
+      </ul>
+    </div>
+    <div class="disclaimer">示例数据说明：本页条目数量、账号名称、日期与规则版本均为演示用示例。品牌、授权、版权与备案信息以实际提供资料为准，未提供部分不作虚构声明。可信度分层与来源标注仅表示页面记录的核对状态，不构成对任何账号或作品的版权认定。</div>
+    <div class="bottom">
+      <span>© 2026 集芳阁云搜官网 · 目录整理与规则维护</span>
+      <span>统计区间 10-22 至 11-08 · 规则版本 v2.3</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="toTop" aria-label="回到顶部" title="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var nav=document.getElementById('mainNav');
+
+  if(menuBtn&&nav){
+    menuBtn.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'&&window.innerWidth<=760){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  // 搜索
+  var input=document.getElementById('siteSearch');
+  var resultBox=document.getElementById('searchResult');
+  var btn=document.getElementById('searchBtn');
+
+  function buildIndex(){
+    var main=document.querySelector('main');
+    if(!main)return [];
+    var nodes=main.querySelectorAll('h2, h3, .chips a, .tagcloud a, .updates a, .news a, .rank a');
+    var list=[];
+    nodes.forEach(function(n){
+      var t=(n.textContent||'').replace(/\s+/g,' ').trim();
+      if(!t)return;
+      var id='';
+      var sec=n.closest('section');
+      if(sec)id=sec.id;
+      if(!id){
+        var p=n.closest('.panel');
+        if(p)id='sidebar';
+      }
+      if(!id)id='top';
+      var also='';
+      var parentSec=n.closest('.sec');
+      if(parentSec){
+        var h=parentSec.querySelector('h2');
+        if(h)also=h.textContent.replace(/\s+/g,' ').trim();
+      }
+      list.push({text:t,id:id,context:also});
+    });
+    // 去重
+    var seen={},out=[];
+    list.forEach(function(it){
+      var k=it.text+'|'+it.id;
+      if(!seen[k]){seen[k]=1;out.push(it);}
+    });
+    return out;
+  }
+  var INDEX=[];
+  function ensure(){ if(!INDEX.length) INDEX=buildIndex(); }
+
+  function runSearch(){
+    ensure();
+    var q=(input.value||'').trim().toLowerCase();
+    if(!q){
+      resultBox.classList.remove('show');
+      resultBox.innerHTML='';
+      return;
+    }
+    var hits=INDEX.filter(function(it){
+      return it.text.toLowerCase().indexOf(q)>-1 || (it.context&&it.context.toLowerCase().indexOf(q)>-1);
+    }).slice(0,8);
+    if(!hits.length){
+      resultBox.innerHTML='<div class="empty">没有找到与“'+escapeHtml(q)+'”匹配的条目。可以换用分类名，例如“曲谱”“簪稿”“修订稿”。</div>';
+      resultBox.classList.add('show');
+      return;
+    }
+    var html=hits.map(function(it){
+      return '<a href="/#'+it.id+'">'+escapeHtml(it.text)+'<span style="color:#6f7a74;font-size:12px"> · '+escapeHtml(it.id)+'</span></a>';
+    }).join('');
+    resultBox.innerHTML=html;
+    resultBox.classList.add('show');
+  }
+  function escapeHtml(s){
+    return (s||'').replace(/[&<>"']/g,function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  if(input){
+    input.addEventListener('input',runSearch);
+    input.addEventListener('focus',function(){ if(input.value.trim())runSearch(); });
+    input.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();runSearch();}
+      if(e.key==='Escape'){resultBox.classList.remove('show');}
+    });
+  }
+  if(btn)btn.addEventListener('click',function(e){e.preventDefault();runSearch();});
+  document.addEventListener('click',function(e){
+    if(resultBox&&!resultBox.contains(e.target)&&e.target!==input&&e.target!==btn){
+      resultBox.classList.remove('show');
+    }
+  });
+
+  // 回顶
+  var toTop=document.getElementById('toTop');
+  function onScroll(){
+    if(window.scrollY>420){toTop.classList.add('show');}else{toTop.classList.remove('show');}
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  // 侧栏高亮
+  var sideLinks=Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var sections=sideLinks.map(function(a){
+    var id=(a.getAttribute('href')||'').replace('/#','');
+    return document.getElementById(id);
+  });
+  function highlight(){
+    var pos=window.scrollY+ (document.querySelector('.head')?document.querySelector('.head').offsetHeight:64) + 90;
+    var current=-1;
+    sections.forEach(function(sec,i){
+      if(sec&&sec.offsetTop<=pos)current=i;
+    });
+    sideLinks.forEach(function(a,i){
+      a.classList.toggle('active',i===current);
+    });
+  }
+  window.addEventListener('scroll',highlight,{passive:true});
+  window.addEventListener('resize',highlight);
+  highlight();
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"集芳阁云搜官网",
+  "description":"古风垂类资源索引目录，覆盖图库、同人文本、曲谱与手作工坊条目，标注来源分层与抓取日期。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"古琴曲谱条目里的调号差异是怎么回事？",
+      "acceptedAnswer":{"@type":"Answer","text":"同一首曲子的简谱与五线谱可能由不同记谱者在不同时间完成，转调时容易出错。索引把两个版本第七小节起逐行对照，标出不一致处，并记录记谱者与修订日期。"}
+    },
+    {
+      "@type":"Question",
+      "name":"同人文本仓里修订稿和连载中怎么区分？",
+      "acceptedAnswer":{"@type":"Answer","text":"修订稿指全文已完结、作者又发布改动说明的版本，通常带删改字数与章节范围；连载中指尚未完结、章节数仍在增加的作品，两者使用不同状态标签。"}
+    },
+    {
+      "@type":"Question",
+      "name":"簪稿署名有争议时，索引站怎么处理？",
+      "acceptedAnswer":{"@type":"Answer","text":"两条记录并存，署名栏标存在争议，并把事实、回应、转述、推测分开记录，用户留言不升格为署名依据。"}
+    },
+    {
+      "@type":"Question",
+      "name":"无署名搬运的内容还会出现在搜索结果里吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"会出现在备查层，不进主目录。主目录结果优先，备查层结果单独折叠并标注来源不清。"}
+    },
+    {
+      "@type":"Question",
+      "name":"绒花教程的材料色号对不上成品图，能报错吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"可以。在评论里填条目编号并写出实际色号与成品差异，反馈会进入该条目的备查层，供后来者参考。"}
+    },
+    {
+      "@type":"Question",
+      "name":"索引多久抓一次，10-22 之后的数据完整吗？",
+      "acceptedAnswer":{"@type":"Answer","text":"常规抓取按周进行，本轮窗口为 10-22 至 11-08。曲谱与文本类覆盖率较高，图库类因二次上传多需去重，部分分类最近抓取日期会晚于 11-06。"}
+    }
+  ]
+}
+</script>
+</body>
+            </html>
